@@ -59,7 +59,7 @@ pub struct Delivery {
     pub(crate) payload: Option<Vec<u8>>,
 
     pub(crate) decoders: DecoderRegistry<Vec<u8>>,
-    pub(crate) acker: Box<dyn Acker>,
+    pub(crate) acker: Box<dyn Acker + Send>,
 }
 
 impl Delivery {
